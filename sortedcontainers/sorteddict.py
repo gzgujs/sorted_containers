@@ -568,7 +568,7 @@ class ValuesView(AbstractValuesView, Sequence):
     else:
         def count(self, value):
             """Return the number of occurrences of *value* in self."""
-            return sum(1 for val in _dict.values() if val == value)
+            return sum(1 for val in self._dict.itervalues() if val == value)
     def __lt__(self, that):
         raise TypeError
     def __gt__(self, that):
